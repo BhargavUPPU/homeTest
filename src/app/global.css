@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: medium;
+}
+
+body {
+  background-color: #eff2f5;
+  height: 100%;
+}
+
+.contentTransparent .p-tabview-panels {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  background: transparent !important;
+
+}
+
+
+@layer base {
+  em {
+    font-weight: bold;
+    color: blue;
+  }
+
+  input {
+    @apply w-full
+  }
+
+  .card-title {
+    @apply text-base font-semibold p-2 mb-2 border-b border-gray-200
+  }
+
+  .card {
+    @apply w-full bg-white mb-5 shadow-md p-2
+  }
+
+  input {
+    @apply w-full
+  }
+
+  .form-label {
+    @apply block uppercase text-sm font-medium text-gray-900 pt-2
+  }
+
+  .form-input {
+    @apply border mt-2 p-1 rounded h-10 border-gray-300
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 mb-2
+  }
+}
+
+@layer components {
+  .p-tree {
+    @apply p-0 border-0;
+  }
+
+  .p-progressbar {
+    @apply bg-green-600 rounded-none h-5
+  }
+
+  .p-progressbar .p-progressbar-value {
+    @apply bg-red-500
+  }
+
+  .p-progressbar .p-progressbar-label {
+    @apply text-white leading-5	 text-xs
+  }
+  .p-sidebar .p-sidebar-header {
+    @apply p-2;
+  }
+  .p-sidebar .p-sidebar-header + .p-sidebar-content{
+    @apply pt-2;
+  }
+}
+
+@layer utilities {
+  button {
+    @apply text-xs;
+  }
+
+}
+
+.p-multiselect {
+  font-size: small;
+  width: 100%;
+}
+
+.p-multiselect-filter {
+  font-size: small;
+  height: 40px;
+}
+
+.contact-card {
+  width: 300px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-card h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-card p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.contact-card a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+span.cke_combo_text {
+  width: auto !important;
+}
+
+.custom-skeleton {
+  border: 1px solid var(--surface-d);
+  border-borderRadius: 4px;
+}
+
+.custom-skeleton ul {
+  list-style: none;
+}
+
+.p-column-title {
+  font-size: small;
+  text-transform: uppercase;
+}
