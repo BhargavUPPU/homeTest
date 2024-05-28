@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 import Logo from "../core/logo";
 import { Divider } from 'primereact/divider';
 import { SplitButton } from 'primereact/splitbutton';
-
 import { Sidebar } from 'primereact/sidebar';
 const Header = ({ handleHidden }: { handleHidden: any }) => {
     const [scroll, setScroll] = useState(false); // Change the initial state to boolean
@@ -27,87 +26,23 @@ const Header = ({ handleHidden }: { handleHidden: any }) => {
     const highlightRegisterClass = isHighRegisterlighted ? "p-menuitem-active" : "";
     const router = useRouter();
     const [visible, setVisible] = useState(false);
-    const leftmenuItems = [{
-        label: 'Features',
-        className: highlightFeatureClass,
-        command: () => router.push("/#features"),
-        template: (item: { label: string, target?: string }, options: any) => { // Add the 'target' property to the type definition of the 'item' parameter
-            return (
-                /* custom element */
-                <a className={classNames(options.className)} onMouseEnter={() => setIsHighlighted(true)}
-                    target={item.target} onClick={options.onClick}>
-                    <span className={options.labelClassName}>{item.label}</span>
-                </a>
-            );
-        },
-    },
-    {
-        label: 'Pricing',
-        className: "mx-2",
-        command: () => router.push("/#pricing")
-    },
-    {
-        label: 'About',
-        className: "m-2",
-        command: () => router.push("/auth/payment-login")
-    },
-    {
-        label: 'Blog',
-        className: "mx-2",
-        command: () => router.push("/auth/payment-login")
-    },
-    {
-        label: 'Contact',
-        className: "mx-2",
-        command: () => router.push("/#contact")
-    },];
     const items = [
-        // {
-        //     label: 'Make a Payment',
-        //     icon: 'pi pi-dollar',
-        //     className: "ml-2 whitespace-nowrap",
-        //     command: () => router.push("/auth/login")
-        // },
-        // {
-        //     label: 'Log In',
-        //     icon: 'pi pi-user',
-        //     className: "mx-4 whitespace-nowrap",
-        //     command: () => router.push("/auth/login")
-        // },
-        // {
-        //     label: 'Register',
-        //     className: highlightRegisterClass,
-        //     template: (item, options) => {
-        //         return (
-        //             <a className="inline-block px-4 py-2 mr-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out whitespace-nowrap" onMouseEnter={() => setIsHighRegisterlighted(true)} >{item.label} <i className="pi pi-angle-down align-middle"></i></a>
-        //         );
-        //     },
-        //     items: [
-        //         {
-        //             label: 'Join Existing HOA',
-        //             icon: 'pi pi-home',
-
-        //             command: () => router.push("/auth/join/user")
-        //         },
-        //         {
-        //             label: 'Create New HOA',
-        //             icon: 'pi pi-plus',
-        //             command: () => router.push("/auth/signup")
-        //         }
-        //     ]
-        // },
-        {
-            label: 'Join Existing HOA',
-            icon: 'pi pi-home',
-
-            command: () => router.push("/auth/join/user")
-        },
-        {
-            label: 'Create New HOA',
-            icon: 'pi pi-plus',
-            command: () => router.push("/auth/sign-up")
-        }
-
+        
+            
+                {
+                    label: 'Join Existing HOA',
+                    icon: 'pi pi-home',
+        
+                    command: () => router.push("/auth/join/user")
+                },
+                {
+                    label: 'Create New HOA',
+                    icon: 'pi pi-plus',
+                    command: () => router.push("/auth/sign-up")
+                }
+            
+       
+        
     ];
 
     return <>
@@ -158,29 +93,18 @@ const Header = ({ handleHidden }: { handleHidden: any }) => {
                             </ul>
                         </div>
                     </div>
-                    <Button label="Log In" severity="secondary" size="small" icon="pi pi-user" text raised className="mb-3 md:mb-0 " onClick={() => { router.push("/auth/sign-in") }} />
-                    {/* <div className='hidden sm:hidden flex gap-2 md:block'><Menubar model={items} className="mt-2" onMouseLeave={() => { setIsHighRegisterlighted(false) }} style={{ background: 'transparent', border: 0, padding: 0 }} /></div> */}
+                    <div className="hidden container mx-auto fle justify-end md:flex gap-4 md:w-full" id="navbar-default">
 
+                        <Button label="Make a Payment" severity="secondary" outlined icon="pi pi-dollar"  onClick={() => { router.push("/auth/payment-login") }} />
+                        <Button label="Log In" severity="secondary"  icon="pi pi-user" className="mb-3 md:mb-0 " onClick={() => { router.push("/auth/sign-in") }} />
+                        <SplitButton label="Register" model={items} className="cursor-default"  />
+
+                        </div>
                 </div>
 
             </nav>
         </header>
 
-        {/* <header className={scroll ? "bg-transparent sticky-bar stick" : "bg-transparent sticky-bar "}>
-            <div className='bg-white py-4 bg-transparent sticky-bar stick'>
-                <div className='max-w-7xl mx-auto'>
-                    <div className='grid grid-cols-12 gap-2 content-center'>
-                        <div className='col-start-1 align-baseline'>
-                            <Logo />
-                        </div>
-                        <div className='col-start-2 col-span-3'>
-                            <Menubar model={leftmenuItems} onMouseLeave={() => { setIsHighlighted(false) }} style={{ background: 'transparent', border: 0, padding: 0 }} className="mx-10" />
-                        </div>
-                        <div className='col-end-12 col-span-3 justify-self-end'><Menubar model={items} className="mt-2" onMouseLeave={() => { setIsHighRegisterlighted(false) }} style={{ background: 'transparent', border: 0, padding: 0 }} /></div>
-                    </div>
-                </div>
-            </div>
-        </header> */}
     </>;
 };
 
