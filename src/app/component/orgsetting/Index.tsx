@@ -56,8 +56,8 @@ const OrgSettings = () => {
 
 
     // Validate
-    const validate = (data) => {
-        let errors = {};
+    const validate = (data: OrgInfoData & MailAddressData) => {
+        let errors: Partial<OrgInfoData & MailAddressData> = {};
         if (!data.group_name) {
             errors.group_name = "Group name is required.";
         }
@@ -115,13 +115,37 @@ const OrgSettings = () => {
     }
 
     // Fee Org Information Handler
-    const orgInfoHandler = (data, form) => {
+    interface OrgInfoData {
+        group_name: string;
+        ein: string;
+        organization_email: string;
+        organization_account_id: string;
+        phone: string;
+        fax: string;
+        facial_period_start: string;
+        timezone: string;
+    }
+
+    const orgInfoHandler = (data: OrgInfoData, form: any) => {
         console.log(data);
         form.restart();
     }
 
 
-    const mailAddressHandler = (data, form) => {
+    interface MailAddressData {
+        address_line_1: string;
+        address_line_2: string;
+        city: string;
+        state_provice: string;
+        zip_code: string;
+        return_address_line_1: string;
+        return_address_line_2: string;
+        return_city: string;
+        return_state_provice: string;
+        return_zip_code: string;
+    }
+
+    const mailAddressHandler = (data: MailAddressData, form: any) => {
         console.log('form working fine');
         console.log(data);
         form.restart();
@@ -130,13 +154,19 @@ const OrgSettings = () => {
 
 
     // Fee Structure Handler
-    const feesettingSubmit = (event) => {
+    interface FeeSettingData {
+        fee: number;
+        discount: number;
+        tax: number;
+    }
+
+    const feesettingSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
     }
 
-    const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
-    const getFormErrorMessage = (meta) => {
-        return isFormFieldValid(meta) && <small className="p-error">{meta.error}</small>;
+    const isFormFieldValid = (meta: any): boolean => !!(meta.touched && meta.error);
+    const getFormErrorMessage = (meta: any): JSX.Element | null => {
+        return isFormFieldValid(meta) ? <small className="p-error">{meta.error}</small> : null;
     };
 
 

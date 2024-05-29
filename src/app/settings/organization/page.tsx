@@ -33,7 +33,7 @@ const OrgHome = (props: any) => {
                 <Billing {...props} />
             </TabPanel>
             <TabPanel header="Bank Accounts">
-                <BankAccountsList mode="org" title="Organization Bank Accounts" />
+                <BankAccountsList /*mode="org" title="Organization Bank Accounts"*/ />
             </TabPanel>
             <TabPanel header="Permissions">
                 <Permissions />

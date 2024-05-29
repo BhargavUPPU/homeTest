@@ -27,7 +27,7 @@ const Preferences = () => {
 
     }
 
-    const preferneceHandler = (data, form) => {
+    const preferneceHandler = (data: object, form: any) => {
         console.log(data);
     }
 
@@ -44,31 +44,31 @@ const Preferences = () => {
                                 <Field name="request_forms" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="request_forms" className="p-checkbox-label uppercase text-xs font-semibold">ENABLE REQUEST FORMS</label>
-                                        <InputSwitch inputId="request_forms" {...input} />
+                                        <InputSwitch inputId="request_forms" {...input} checked={input.checked || false} />
                                     </div>
                                 )} />
                                 <Field name="unit_violations" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="unit_violations" className="p-checkbox-label uppercase text-xs font-semibold">ENABLE UNIT VIOLATIONS</label>
-                                        <InputSwitch inputId="unit_violations" {...input} />
+                                        <InputSwitch inputId="unit_violations" {...input} checked={input.checked||false}/>
                                     </div>
                                 )} />
                                 <Field name="surveys" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="surveys" className="p-checkbox-label uppercase text-xs font-semibold">ENABLE SURVEYS</label>
-                                        <InputSwitch inputId="surveys" {...input} />
+                                        <InputSwitch inputId="surveys" {...input} checked={input.checked||false}/>
                                     </div>
                                 )} />
                                 <Field name="calendar" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="calendar" className="p-checkbox-label uppercase text-xs font-semibold">ENABLE CALENDAR</label>
-                                        <InputSwitch inputId="calendar" {...input} />
+                                        <InputSwitch inputId="calendar" {...input} checked={input.checked||false} />
                                     </div>
                                 )} />
                                 <Field name="message_board" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="message_board" className="p-checkbox-label uppercase text-xs font-semibold">ENABLE MESSAGE BOARD</label>
-                                        <InputSwitch inputId="message_board" {...input} />
+                                        <InputSwitch inputId="message_board" {...input} checked={input.checked||false}/>
                                     </div>
                                 )} />
 
@@ -80,7 +80,7 @@ const Preferences = () => {
                                 <Field name="require_late_fee" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="require_late_fee" className="p-checkbox-label uppercase text-xs font-semibold">REQUIRE LATE FEES TO BE PAID WITH OR BEFORE THEIR ORIGINATING INVOICE</label>
-                                        <InputSwitch inputId="require_late_fee" {...input} />
+                                        <InputSwitch inputId="require_late_fee" {...input} checked={input.checked || false}/>
                                     </div>
                                 )} />
 
@@ -94,37 +94,37 @@ const Preferences = () => {
                                 <Field name="send_monthly_statement" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="send_monthly_statement" className="p-checkbox-label uppercase text-xs font-semibold">SEND MONTHLY STATEMENT EMAILS</label>
-                                        <InputSwitch inputId="send_monthly_statement" {...input} />
+                                        <InputSwitch inputId="send_monthly_statement" {...input} checked={input.checked || false} />
                                     </div>
                                 )} />
                                 <Field name="attach_pdf" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="attach_pdf" className="p-checkbox-label uppercase text-xs font-semibold">ATTACH PDF TO EMAILED INVOICES</label>
-                                        <InputSwitch inputId="attach_pdf" {...input} />
+                                        <InputSwitch inputId="attach_pdf" {...input} checked={input.checked ?? false} />
                                     </div>
                                 )} />
                                 <Field name="payment_reminder" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="payment_reminder" className="p-checkbox-label uppercase text-xs font-semibold">SEND PAYMENT REMINDER EMAILS</label>
-                                        <InputSwitch inputId="payment_reminder" {...input} />
+                                        <InputSwitch inputId="payment_reminder" {...input} checked={input.checked || false} />
                                     </div>
                                 )} />
                                 <Field name="past_due" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="past_due" className="p-checkbox-label uppercase text-xs font-semibold">SEND PAST DUE REMINDER EMAILS</label>
-                                        <InputSwitch inputId="past_due" {...input} />
+                                        <InputSwitch inputId="past_due" {...input} checked={input.checked || false}/>
                                     </div>
                                 )} />
                                 <Field name="send_new_late_fee" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="send_new_late_fee" className="p-checkbox-label uppercase text-xs font-semibold">SEND NEW LATE FEE CHARGE EMAILS</label>
-                                        <InputSwitch inputId="send_new_late_fee" {...input} />
+                                        <InputSwitch inputId="send_new_late_fee" {...input} checked={input.checked || false}/>
                                     </div>
                                 )} />
                                 <Field name="send_daily_summary" type="checkbox" render={({ input, meta }) => (
                                     <div className="flex items-center justify-between mb-5">
                                         <label htmlFor="send_daily_summary" className="p-checkbox-label uppercase text-xs font-semibold">SEND DAILY SUMMARY EMAIL TO ADMINS</label>
-                                        <InputSwitch inputId="send_daily_summary" {...input} />
+                                        <InputSwitch inputId="send_daily_summary" {...input} checked={input.checked || false}/>
                                     </div>
                                 )} />
 
