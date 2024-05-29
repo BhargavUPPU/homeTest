@@ -16,8 +16,6 @@ export default clerkMiddleware((auth, request) =>{
     return NextResponse.redirect(orgSelection);
   }
 
-
- 
 });
 
 export const config = {
