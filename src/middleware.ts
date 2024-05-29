@@ -15,14 +15,7 @@ export default clerkMiddleware((auth, request) =>{
     const orgSelection = new URL("/auth/create-organization", request.url);
     return NextResponse.redirect(orgSelection);
   }
-  if (
-    auth().userId &&
-    auth().orgId &&
-    isPublicRoute(request)
-  ) {
-    const orgSelection = new URL("/dashboard", request.url);
-    return NextResponse.redirect(orgSelection);
-  }
+
 
  
 });
