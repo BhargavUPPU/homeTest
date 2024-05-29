@@ -27,8 +27,7 @@ export default  function RootLayout({
       <body className={inter.className}>
         <>
        { orgId? <Layout>{children}</Layout> : <PublicLayout>{children}</PublicLayout> } 
-        </>     
-        
+        </>       
       </body>
     </html>
     </ClerkProvider>

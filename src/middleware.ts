@@ -18,11 +18,12 @@ export default clerkMiddleware((auth, request) =>{
   if (
     auth().userId &&
     auth().orgId &&
-    request.nextUrl.pathname !== "/dashboard"
+    isPublicRoute(request)
   ) {
-    const dashboard = new URL("/dashboard", request.url);
-    return NextResponse.redirect(dashboard);
+    const orgSelection = new URL("/dashboard", request.url);
+    return NextResponse.redirect(orgSelection);
   }
+
  
 });
 
