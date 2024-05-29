@@ -1,5 +1,6 @@
 import React from 'react'
 import { SignIn, SignInButton,SignedOut } from '@clerk/nextjs'
+
 export default function page() {
   return (
     <> 
@@ -9,3 +10,4 @@ export default function page() {
     </>
   )
 }
+

@@ -7,6 +7,7 @@ import { Menu } from 'primereact/menu';
 import { useRouter } from 'next/navigation';
 import { useClerk } from "@clerk/clerk-react";
 import { OrganizationSwitcher } from '@clerk/nextjs';
+import { OrganizationList } from '@clerk/nextjs';
 function OrgSelector() {
     return (
         <>

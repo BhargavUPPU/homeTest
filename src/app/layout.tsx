@@ -20,13 +20,13 @@ export default  function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-   const {userId} = auth();
+   const {orgId} = auth();
   return (
      <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
         <>
-       { userId? <Layout>{children}</Layout> : <PublicLayout>{children}</PublicLayout> } 
+       { orgId? <Layout>{children}</Layout> : <PublicLayout>{children}</PublicLayout> } 
         </>     
         
       </body>
